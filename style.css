@@ -1,4 +1,5 @@
-/* Menambahkan font dari Google Fonts yang sudah disertakan dalam index.html */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lora&family=Poppins:wght@300;400&display=swap');
+
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -59,74 +60,25 @@ p {
   opacity: 0.3;
 }
 
-/* Efek Kado yang Turun */
-.gift-box {
-  position: absolute;
-  top: -300px; /* Memastikan kotak mulai dari atas halaman */
-  left: 50%;
-  transform: translateX(-50%);
-  animation: drop 2s ease-in-out forwards;
-}
-
-.gift {
-  width: 150px;
-  height: 150px;
-  background-color: #f3c13a;
-  border-radius: 10px;
-  position: relative;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-}
-
-.gift:before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 20px;
-  background-color: #fff;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-@keyframes drop {
-  0% {
-    top: -300px; /* Kotak dimulai di atas layar */
-  }
-  50% {
-    top: 50%; /* Tengah layar */
-  }
-  100% {
-    top: 30%; /* Berhenti di tengah layar */
-  }
-}
-
-/* Emoji section */
-.emoji {
-  font-size: 3em;
+.decorations {
+  text-align: center;
   margin-top: 30px;
 }
 
-.emoji span {
-  margin: 0 10px;
+.balloon, .confetti {
+  width: 150px;  /* Ukuran gambar */
+  margin: 20px;
+  animation: float 3s infinite ease-in-out;
 }
 
-/* Media Query untuk Responsif di Perangkat Mobile */
-@media (max-width: 768px) {
-  .gift-box {
-    top: -150px;
+@keyframes float {
+  0% {
+    transform: translateY(0);
   }
-
-  h1 {
-    font-size: 2.5em; /* Menyesuaikan ukuran font di perangkat mobile */
+  50% {
+    transform: translateY(-20px);
   }
-
-  p {
-    font-size: 1.1em;
-  }
-
-  .button {
-    font-size: 1em;
+  100% {
+    transform: translateY(0);
   }
 }
