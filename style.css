@@ -62,7 +62,7 @@ p {
 /* Efek Kado yang Turun */
 .gift-box {
   position: absolute;
-  top: -200px; /* Mulai dari atas */
+  top: -300px; /* Memastikan kotak mulai dari atas halaman */
   left: 50%;
   transform: translateX(-50%);
   animation: drop 2s ease-in-out forwards;
@@ -92,13 +92,13 @@ p {
 
 @keyframes drop {
   0% {
-    top: -200px;
+    top: -300px; /* Kotak dimulai di atas layar */
   }
   50% {
-    top: 50%;
+    top: 50%; /* Tengah layar */
   }
   100% {
-    top: 30%;
+    top: 30%; /* Berhenti di tengah layar */
   }
 }
 
