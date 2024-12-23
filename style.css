@@ -59,61 +59,50 @@ p {
   opacity: 0.3;
 }
 
-.image-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  justify-items: center;
-  margin: 50px 0;
+/* Efek Kado yang Turun */
+.gift-box {
+  position: absolute;
+  top: -200px; /* Mulai dari atas */
+  left: 50%;
+  transform: translateX(-50%);
+  animation: drop 2s ease-in-out forwards;
 }
 
-.row {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
-
-.image {
-  width: 200px;
-  height: 200px;
-  background: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.gift {
+  width: 150px;
+  height: 150px;
+  background-color: #f3c13a;
   border-radius: 10px;
-  overflow: hidden;
-  opacity: 0;
-  animation: slideIn 1s forwards;
+  position: relative;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 }
 
-.image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.gift:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes slideIn {
+@keyframes drop {
   0% {
-    transform: translateX(100%);
-    opacity: 0;
+    top: -200px;
+  }
+  50% {
+    top: 50%;
   }
   100% {
-    transform: translateX(0);
-    opacity: 1;
+    top: 30%;
   }
 }
 
-.decorations {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 10px;
-}
-
-.decorations img {
-  width: 40px;
-  height: 40px;
-}
-
+/* Emoji section */
 .emoji {
   font-size: 3em;
   margin-top: 30px;
@@ -125,14 +114,8 @@ p {
 
 /* Media Query untuk Responsif di Perangkat Mobile */
 @media (max-width: 768px) {
-  .image-grid {
-    grid-template-columns: 1fr; /* Menjadikan grid satu kolom pada perangkat kecil */
-    gap: 20px;
-  }
-
-  .image {
-    width: 100%;
-    height: auto;
+  .gift-box {
+    top: -150px;
   }
 
   h1 {
