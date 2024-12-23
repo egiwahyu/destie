@@ -65,8 +65,8 @@ p {
   margin-top: 30px;
 }
 
-.balloon, .confetti {
-  width: 150px;  /* Ukuran gambar */
+.balloon, .matcha {
+  width: 150px;
   margin: 20px;
   animation: float 3s infinite ease-in-out;
 }
@@ -80,5 +80,36 @@ p {
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+.gift-box {
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fall 2s forwards;
+}
+
+.gift {
+  width: 150px;
+  animation: giftBounce 1s ease-in-out infinite;
+}
+
+@keyframes fall {
+  0% {
+    top: -200px;
+  }
+  100% {
+    top: 300px;
+  }
+}
+
+@keyframes giftBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
   }
 }
